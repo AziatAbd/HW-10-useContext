@@ -1,13 +1,12 @@
-import { useContext, useReducer } from "react";
-import { v4 } from "uuid";
+import { useContext } from "react";
 import TodoList from "../TodoList/TodoList";
 import styled from "styled-components";
 import { Button, TextField } from "@mui/material";
-import { TodoContext, TodoProvider } from "../../store/TodoProvider";
+import { TodoContext } from "../../store/TodoProvider";
 
 function TodoForm() {
   const [state, dispatch, currentTodo] = useContext(TodoContext);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: "ADD_TODO", payload: currentTodo });
